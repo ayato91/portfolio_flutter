@@ -7,14 +7,17 @@ class HomeBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child:Column(
-            children: [
-              SizedBox(height: 50),
-              HomeButtons(),
-              SizedBox(height: 150),
-              Text('Are', style: TextStyle(color: Colors.white))
-            ],
-          ) 
-    );
+        child: Column(
+      children: [
+        SizedBox(height: 50),
+        HomeButtons(),
+        SizedBox(height: 150),
+        Text('Are You Ready to',
+            style: TextStyle(fontSize: 30, color: Colors.white)),
+        Text('EXPLORE?',
+            style:
+                TextStyle(letterSpacing: 20, fontSize: 40, color: Colors.white))
+      ],
+    ));
   }
 }

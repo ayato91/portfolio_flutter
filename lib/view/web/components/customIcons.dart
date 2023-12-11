@@ -4,8 +4,10 @@ class CustomIcon extends StatelessWidget {
   const CustomIcon(
       {super.key,
       this.size = 27,
-      this.color = Colors.white60,
+      this.color = Colors.green,
+      this.isSelected = false,
       required this.icon});
+  final bool isSelected;
   final IconData icon;
   final double size;
   final Color color;
@@ -14,7 +16,7 @@ class CustomIcon extends StatelessWidget {
     return Icon(
       icon,
       size: size,
-      color: color,
+      color: isSelected ? color : Colors.white60,
     );
   }
 }

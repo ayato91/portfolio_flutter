@@ -14,7 +14,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int targetWidth = 430;
+    int targetWidth = 500;
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => NavRailCubit()),

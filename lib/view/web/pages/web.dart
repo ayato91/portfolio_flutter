@@ -20,6 +20,7 @@ class _WebPageState extends State<WebPage> {
       builder: (context, state) {
         final model = context.watch<NavRailCubit>();
         return Scaffold(
+          resizeToAvoidBottomInset: false,
           backgroundColor: Color(0xFF1E192E),
           body: Row(
             children: [
@@ -30,22 +31,66 @@ class _WebPageState extends State<WebPage> {
                   child: Column(children: [
                     SizedBox(height: 40),
                     CustomIcon(icon: Icons.html, size: 30),
-                    SizedBox(height: 40),
+                    SizedBox(height: 30),
                     InkWell(
                         onTap: () {
                           model.indexChange(0);
                         },
-                        child: CustomIcon(icon: Icons.home_filled)),
-                    Text('HOME',
-                        style: TextStyle(fontSize: 12, color: Colors.white)),
-                    SizedBox(height: 40),
+                        child: Container(
+                          width: double.maxFinite,
+                          decoration: BoxDecoration(
+                              border: Border(
+                                  left: BorderSide(
+                                      color: model.index == 0
+                                          ? Colors.greenAccent
+                                          : Colors.transparent,
+                                      width: 2))),
+                          child: Column(
+                            children: [
+                              CustomIcon(
+                                  icon: Icons.home_outlined,
+                                  color: Colors.greenAccent,
+                                  isSelected: (model.index == 0)),
+                              SizedBox(height: 5),
+                              Text('HOME',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: model.index == 0
+                                          ? Colors.greenAccent
+                                          : Colors.white))
+                            ],
+                          ),
+                        )),
+                    SizedBox(height: 30),
                     InkWell(
                         onTap: () {
                           model.indexChange(1);
                         },
-                        child: CustomIcon(icon: Icons.double_arrow_outlined)),
-                    Text('HEAD',
-                        style: TextStyle(fontSize: 12, color: Colors.white)),
+                        child: Container(
+                          width: double.maxFinite,
+                          decoration: BoxDecoration(
+                              border: Border(
+                                  left: BorderSide(
+                                      color: model.index == 1
+                                          ? Colors.cyanAccent
+                                          : Colors.transparent,
+                                      width: 2))),
+                          child: Column(
+                            children: [
+                              CustomIcon(
+                                  isSelected: model.index == 1,
+                                  color: Colors.cyanAccent,
+                                  icon: Icons.double_arrow_outlined),
+                              SizedBox(height: 5),
+                              Text('WORKS',
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: model.index == 1
+                                          ? Colors.cyanAccent
+                                          : Colors.white))
+                            ],
+                          ),
+                        )),
                     Spacer(),
                     FlutterShowcase(),
                     SizedBox(height: 55)
