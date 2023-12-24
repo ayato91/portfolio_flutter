@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/view/web/components/homeButtons.dart';
+import 'package:portfolio/view/web/components/navButtons.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -10,7 +10,7 @@ class HomeBody extends StatelessWidget {
         child: Column(
       children: [
         SizedBox(height: 50),
-        HomeButtons(),
+        NavigationButtons(),
         SizedBox(height: 150),
         Text('Are You Ready to',
             style: TextStyle(fontSize: 30, color: Colors.white)),
