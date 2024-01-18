@@ -36,7 +36,7 @@ class _NavigationButtonsState extends State<NavigationButtons> {
                     padding: const EdgeInsets.symmetric(vertical: 18),
                     child: Text('Explore Profile',
                         style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w800)),
+                            fontSize: 16, fontWeight: FontWeight.bold)),
                   )),
               SizedBox(width: 18),
               SizedBox(
@@ -57,7 +57,7 @@ class _NavigationButtonsState extends State<NavigationButtons> {
                               style: TextStyle(
                                   color: Color(0xFF0D0B15),
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w900)),
+                                  fontWeight: FontWeight.bold)),
                           AnimatedContainer(
                             duration: Duration(milliseconds: 230),
                             width: model.isHovered2 ? 15 : 10,

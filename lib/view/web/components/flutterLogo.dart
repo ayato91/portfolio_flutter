@@ -21,7 +21,7 @@ class _FlutterShowcaseState extends State<FlutterShowcase> {
             child: AnimatedContainer(
               height: 50,
               duration: Duration(milliseconds: 200),
-              width: model.isHovered || model.isTapped ? 248 : 40,
+              width: model.isHovered || model.isTapped ? 255 : 40,
               decoration: model.isHovered || model.isTapped
                   ? BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
