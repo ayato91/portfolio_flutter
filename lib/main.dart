@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio/view/web/pages/web.dart';
 import 'package:portfolio/view/mobile/mobile.dart';
+import 'package:portfolio/viewmodel/bloc/flutterLogoCubit.dart';
 import 'package:portfolio/viewmodel/bloc/homeCubit.dart';
 import 'package:portfolio/viewmodel/bloc/navRailCubit.dart';
 
@@ -18,6 +19,7 @@ class MainApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => NavRailCubit()),
+        BlocProvider(create: (context) => LogoCubit()),
         BlocProvider(create: (context) => HomeCubit()),
       ],
       child: MaterialApp(
